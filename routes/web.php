@@ -21,3 +21,4 @@ Route::get('/certificate', function () {
     return view('certificate');
 });
 Route::post('/certificate', [App\Http\Controllers\CertificateController::class, 'generateCertificate']);
+Route::get('/photo', [App\Http\Controllers\PhotoController::class, 'photo'])->name('photo');
