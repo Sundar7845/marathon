@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Marathon Registration Poster</title>
+    <meta charset="utf-8">
+    <title>Preview Poster</title>
     <style>
         body {
             margin: 0;
