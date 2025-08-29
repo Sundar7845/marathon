@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'mobile',
-        'category',
+        'photo_path',
+        'poster_path'
     ];
 
     /**
