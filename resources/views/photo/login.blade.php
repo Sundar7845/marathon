@@ -11,7 +11,7 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center" style="background-image: url({{ asset('bg.jpg') }});background-size: cover">
 
-  <div class="max-w-md w-full mx-auto bg-[#151515] rounded-xl shadow-xl shadow-black/40 px-6 py-14 mt-10">
+  <div class="max-w-md w-full mx-auto bg-[#151515] border border-[#A1A1AA] rounded-xl shadow-xl shadow-black/40 px-6 py-14 mt-10">
     <h2 class="text-center text-white text-lg mb-6">
       Enter your phone number to <br> generate your avatar
     </h2>

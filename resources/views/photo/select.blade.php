@@ -13,7 +13,7 @@
 
 <body class="min-h-screen flex flex-col items-center justify-center" style="background-image: url({{ asset('bg.jpg') }});background-size: cover">
 
-    <div class="max-w-md relative w-full mx-auto bg-[#151515] rounded-xl shadow-xl shadow-black/40 px-6 py-14 mt-10">
+    <div class="max-w-md relative w-full mx-auto bg-[#151515] border border-[#A1A1AA] rounded-xl shadow-xl shadow-black/40 px-6 py-14 mt-10">
         <a class="absolute top-4 left-4 text-[#A1A1AA] text-sm flex gap-1 items-center" href="{{ route('login') }}"><svg xmlns="http://www.w3.org/2000/svg" class="w-3" viewBox="0 0 24 23" fill="none">
                 <path d="M12.4765 21.8203L2.93984 12.3126H24V10.6872H3.13852L12.2373 1.13809L11.0856 0L0 11.6223L11.3637 23L12.4765 21.8203Z" fill="#A1A1AA" />
             </svg>Back</a>
