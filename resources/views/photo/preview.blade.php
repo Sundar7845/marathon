@@ -1,87 +1,206 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Preview Poster</title>
+    <meta charset="UTF-8">
+    <title>Marathon Registration Poster</title>
     <style>
         body {
-            background: #111;
-            color: #eee;
-            font-family: system-ui, Arial;
-            padding: 24px
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #004d4d;
+            color: white;
         }
 
-        .wrap {
-            max-width: 1060px;
-            margin: 20px auto;
-            background: #1f1f1f;
-            border-radius: 16px;
-            padding: 28px;
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background-color: #015c5c;
+        }
+
+        .top-logos {
             display: flex;
-            gap: 24px;
-            align-items: flex-start
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
         }
 
-        .imgbox {
-            flex: 1;
-            background: #0c0c0c;
-            border-radius: 12px;
-            padding: 12px;
+        .top-logos img {
+            height: 70px;
+        }
+
+        .middle-section {
             display: flex;
-            justify-content: center
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 40px;
         }
 
-        .imgbox img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px
-        }
-
-        .side {
-            width: 260px
-        }
-
-        .btn {
-            width: 100%;
-            background: #ff7a00;
-            border: none;
-            border-radius: 10px;
-            padding: 14px;
-            color: #fff;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 14px;
+        .qr-section {
             text-align: center;
-            display: block;
-            text-decoration: none
+            flex: 1;
+            margin: 10px;
         }
 
-        .back {
-            color: #bbb;
-            text-decoration: none;
+        .qr-section img {
+            width: 200px;
+            height: auto;
+        }
+
+        .running-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f58220;
+        }
+
+        .sub-text {
+            color: white;
+            font-size: 20px;
+        }
+
+        .circle-frame {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 10px auto;
+            border: 5px solid #f58220;
+        }
+
+        .name-bar {
+            background-color: white;
+            height: 40px;
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 5px;
+            color: black
+        }
+
+        .bottom-section {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sponsors,
+        .partners {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sponsors img,
+        .partners img {
+            max-height: 60px;
+            object-fit: contain;
+        }
+
+        .footer {
+            background-color: #f58220;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        .contacts {
+            background-color: #003f3f;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+
+        .btn-download {
             display: inline-block;
-            margin-bottom: 10px
+            margin-top: 20px;
+            background-color: #ff7a00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background-color: #e66400;
         }
     </style>
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="imgbox">
-            @if ($participant->poster_path)
-                <img src="{{ asset('storage/' . $participant->poster_path) }}" alt="Poster for {{ $participant->name }}">
-            @else
-                <p>No poster found. Please upload a photo.</p>
-            @endif
+
+    <div class="container">
+        <!-- Top Logos -->
+        <div class="top-logos">
+            <img src="{{ asset('img/krisha_logo.png') }}" alt="Krisha Charitable Trust Logo">
+            <img src="{{ asset('img/emerald_logo.png') }}" alt="Emerald Logo">
+            <img src="{{ asset('img/jewelone_logo.png') }}" alt="Jewel One Logo">
         </div>
-        <div class="side">
-            <a class="back" href="{{ route('upload.form', $participant) }}">&#8592; Back</a>
-            @if ($participant->poster_path)
-                <a class="btn" href="{{ route('download', $participant) }}">Download ⬇️</a>
-            @endif
+
+        <!-- Middle Section -->
+        <div class="middle-section">
+            <div class="circle-frame"><img src="{{ asset('/storage/' . $participant->photo_path) }}"
+                    alt="Participant Photo">
+            </div>
+
+            <div class="qr-section">
+                <p><strong>SCAN QR FOR REGISTRATION</strong></p>
+                <img src="{{ asset('img/qr_code.png') }}" alt="QR Code for Registration">
+                <p class="running-text">I AM RUNNING</p>
+                <p class="sub-text">ARE YOU RUNNING?</p>
+            </div>
+        </div>
+
+        <!-- Name Bar -->
+        <div class="name-bar">{{ $participant->name }}</div>
+
+        <!-- Download Button -->
+        @if ($participant->photo_path)
+            <a href="{{ asset('/storage/' . $participant->photo_path) }}" class="btn-download" download>
+                Download Poster Image
+            </a>
+        @endif
+
+        <!-- Bottom Section -->
+        <div class="bottom-section">
+            <!-- Partners -->
+            <h3 style="text-align: center;">IN ASSOCIATION WITH</h3>
+            <div class="partners">
+                <img src="{{ asset('img/saliwan_runners_logo.png') }}" alt="Saliwan Runners">
+                <img src="{{ asset('img/genesis_logo.png') }}" alt="Genesis Foundation">
+            </div>
+
+            <!-- Sponsors -->
+            <h3 style="text-align: center;">OUR SPONSORS</h3>
+            <div class="sponsors">
+                <img src="{{ asset('img/gjv_logo.png') }}" alt="GJV Realtors">
+                <img src="{{ asset('img/kavery_logo.png') }}" alt="Kavery Premium Tank">
+                <img src="{{ asset('img/pranay_logo.png') }}" alt="Pranay Agencies & Infraa">
+                <img src="{{ asset('img/tilebros_logo.png') }}" alt="The Tile Bros">
+                <img src="{{ asset('img/mangum_logo.png') }}" alt="Mangum Properties">
+                <img src="{{ asset('img/radiomirchi_logo.png') }}" alt="Radio Mirchi">
+                <img src="{{ asset('img/bmch_logo.png') }}" alt="BMCH">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            EVENT VENUE: EMERALD GROUND, THOPPAMPATTI PIRIVU, COIMBATORE
+        </div>
+        <div class="contacts">
+            CONTACT NUMBER - 7397 111 747 | 99521 99954 | 93455 00928
         </div>
     </div>
+
 </body>
 
 </html>
