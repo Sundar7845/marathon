@@ -54,9 +54,15 @@ class PhotoController extends Controller
             'photo' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:4096'],
         ]);
 
-        // Save uploaded face photo
-        $path = $request->file('photo')->store('participants', 'public');
-        $participant->update(['photo_path' => $path]);
+        // Always save as "marathon" with original extension
+        $extension = $request->file('photo')->getClientOriginalExtension();
+        $filename  = $participant->name . $extension;
+
+        // Move file to public/participants
+        $request->file('photo')->move(public_path('participants'), $filename);
+
+        // Save path in DB
+        $participant->update(['photo_path' => 'participants/' . $filename]);
 
         return redirect()->route('preview', $participant);
     }

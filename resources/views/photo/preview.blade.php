@@ -78,7 +78,7 @@
                                 <!-- Circle Frame -->
                                 <td width="50%" align="center">
                                         <div class="rounded-full border-2 border-amber-600 h-[280px] w-[200px] overflow-hidden">
-                                        <img src="{{ asset('/storage/' . $participant->photo_path) }}" alt="Participant Photo" class="object-cover w-full h-full">
+                                        <img src="{{ asset($participant->photo_path) }}" alt="Participant Photo" class="object-cover w-full h-full">
                                         </div>
                                     
                                     <div class="text-2xl uppercase font-bold text-white mb-5 mt-2">
