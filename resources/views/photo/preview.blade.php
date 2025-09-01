@@ -13,15 +13,13 @@
     style="background-image: url('{{ asset('bg.jpg') }}')">
 
     <div
-        class="max-w-3xl flex flex-col lg:flex-row w-full overflow-auto mx-auto bg-[#151515] border border-[#A1A1AA] gap-5 rounded-xl shadow-xl shadow-black/40 p-4 mt-10 text-white">
+        class="max-w-4xl flex flex-col lg:flex-row w-full overflow-auto mx-auto bg-[#151515] border border-[#A1A1AA] gap-5 rounded-xl shadow-xl shadow-black/40 p-4 mt-10 text-white">
 
         <div class="lg:order-2">
             <!-- Download Button -->
             @if ($participant->photo_path)
-                <div class="text-center">
-                    <!-- <a href="{{ asset('/storage/' . $participant->photo_path) }}" class="inline-block bg-[#ff7a00] hover:bg-[#e66400] text-white px-6 py-3 rounded-lg font-semibold transition-colors" download>
-                    Download Poster Image
-                </a> -->
+                <div class="flex flex-wrap gap-5">
+          
                     <button id="downloadPoster"
                         class="inline-flex gap-1 items-center bg-[#E65D00] text-white px-6 py-2 rounded-sm font-medium">
                         Download <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 21 21"
@@ -31,7 +29,7 @@
                                 fill="white" />
                         </svg>
                     </button>
-                    <div class="text-center mt-4 flex justify-center gap-3">
+                    
                         <!-- WhatsApp -->
                         <a id="shareWhatsApp" target="_blank"
                             class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center gap-1">
@@ -51,100 +49,109 @@
                             </svg>
                             Share on Facebook
                         </a>
-                    </div>
 
                 </div>
             @endif
         </div>
 
 
-        <div class="bg-[#025b63] w-[550px]" id="poster-section">
+        <div class="bg-[#025b63] min-w-[550px] max-w-[550px]" id="poster-section">
             <table class="w-full" cellpadding="0" cellspacing="0" border="0">
                 <!-- Top Logos -->
                 <tr>
                     <td colspan="3" align="center" style="padding:20px;">
                         <table width="100%">
                             <tr>
-                                <td align="left"><img src="{{ asset('img/krisha_logo.png') }}"
-                                        alt="Krisha Charitable Trust Logo" class="h-14"></td>
-                                <td align="center"><img src="{{ asset('img/emerald_logo.png') }}" alt="Emerald Logo"
-                                        class="h-14"></td>
-                                <td align="right"><img src="{{ asset('img/jewelone_logo.png') }}" alt="Jewel One Logo"
-                                        class="h-14"></td>
+                                <td width="33.3%" align="left"><img src="{{ asset('img/krisha_logo.png') }}" alt="Krisha Charitable Trust Logo" class="h-16"></td>
+                                <td width="33.3%" align="center"><img src="{{ asset('img/emerald_logo.png') }}" alt="Emerald Logo" class="h-16 mx-auto"></td>
+                                <td width="33.3%" align="right"><img src="{{ asset('img/jewelone_logo.png') }}" alt="Jewel One Logo" class="h-16"></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
 
                 <!-- Middle Section -->
-                <div class="grid grid-cols-2 gap-6 mb-10 px-6">
-                    <!-- Circle Frame -->
-                    <div class="flex flex-col items-center justify-center">
-                        <div
-                            class="w-72 h-72 rounded-full border-2 border-[#f58220] bg-white overflow-hidden flex items-center justify-center">
-                            <img src="{{ asset('/storage/' . $participant->photo_path) }}" alt="Participant Photo"
-                                class="object-cover w-full h-full">
-                        </div>
-                        <div class="text-2xl uppercase font-semibold text-center mt-4">
-                            {{ $participant->name }}
-                        </div>
-                    </div>
+                <tr>
+                    <td colspan="3" class="py-2">
+                        <table width="100%">
+                            <tr>
+                                <!-- Circle Frame -->
+                                <td width="50%" align="center">
+                                        <div class="rounded-full border-2 border-amber-600 h-[280px] w-[200px] overflow-hidden">
+                                        <img src="{{ asset('/storage/' . $participant->photo_path) }}" alt="Participant Photo" class="object-cover w-full h-full">
+                                        </div>
+                                    
+                                    <div class="text-2xl uppercase font-bold text-white mb-5 mt-2">
+                
+                                        {{ $participant->name }}
+                                    </div>
+                                </td>
 
-                    <!-- QR Section -->
-                    <div class="flex-1 text-center">
-                        <p class="font-semibold mb-3 text-lg">SCAN QR FOR <br> REGISTRATION</p>
-                        <img src="{{ asset('img/qr_code.png') }}" alt="QR Code for Registration"
-                            class="w-48 mx-auto mb-4">
-                        <p class="text-3xl font-bold text-[#f58220]">I AM RUNNING</p>
-                        <p class="text-3xl font-semibold text-[#f58220]">ARE YOU RUNNING?</p>
-                    </div>
-                </div>
-
-
-
-
+                                <!-- QR Section -->
+                                <td width="50%" align="center" style="background-image: url('{{ asset('img/bg-image.png') }}');background-size: contain; background-repeat: no-repeat;background-position: center;">
+                                    <p class="font-bold text-center text-white text-xl">SCAN QR FOR <br> REGISTRATION</p>
+                                    <img class="my-3" src="{{ asset('img/qr_code.png') }}" alt="QR Code for Registration" width="150">
+                                    <p class="font-extrabold text-center text-[#f58220] text-3xl mb-2">I AM RUNNING</p>
+                                    <p class="font-bold text-center text-[#f58220] text-2xl mb-2">ARE YOU RUNNING?</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
                 <!-- Bottom Section -->
-                <div class="bg-white text-black p-4 grid grid-cols-[30%_auto] gap-6">
-                    <div>
-                        <!-- Partners -->
-                        <h3 class="text-center font-semibold mb-4 text-xs">IN ASSOCIATION WITH</h3>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <img src="{{ asset('img/saliwan_runners_logo.png') }}" alt="Saliwan Runners">
-                            <img src="{{ asset('img/genesis_logo.png') }}" alt="Genesis Foundation">
-                        </div>
-                    </div>
+                <tr>
+                    <td colspan="3" style="background:#fff;color:#000;padding:20px;">
+                        <table width="100%">
+                            <tr valign="top">
+                                <!-- Partners -->
+                                <td width="30%" align="center" style="padding-right:20px;">
+                                    <h3  class="text-xs font-semibold mb-4">IN ASSOCIATION WITH</h3>
+                                    <table width="100%">
+                                        <tr>
+                                            <td class="pe-2" align="center"><img src="{{ asset('img/saliwan_runners_logo.png') }}" alt="Saliwan Runners"></td>
+                                            <td align="center"><img src="{{ asset('img/genesis_logo.png') }}" alt="Genesis Foundation"></td>
+                                        </tr>
+                                    </table>
+                                </td>
 
-                    <div class="border-l border-black pl-4">
-                        <!-- Sponsors -->
-                        <h3 class="text-center font-semibold mb-4 text-xs">OUR SPONSORS</h3>
-                        <div class="grid grid-cols-4 gap-6">
-                            <img src="{{ asset('img/gjv_logo.png') }}" alt="GJV Realtors">
-                            <img src="{{ asset('img/kavery_logo.png') }}" alt="Kavery Premium Tank">
-                            <img src="{{ asset('img/pranay_logo.png') }}" alt="Pranay Agencies & Infraa">
-                            <img src="{{ asset('img/tilebros_logo.png') }}" alt="The Tile Bros">
-                            <img src="{{ asset('img/mangum_logo.png') }}" alt="Mangum Properties">
-                            <img src="{{ asset('img/radiomirchi_logo.png') }}" alt="Radio Mirchi">
-                            <img src="{{ asset('img/bmch_logo.png') }}" alt="BMCH">
-                        </div>
-                    </div>
-                </div>
+                                <!-- Sponsors -->
+                                <td width="70%" style="border-left:1px solid #000;padding-left:20px;">
+                                    <h3 class="text-xs font-semibold mb-4">OUR SPONSORS</h3>
+                                    <table width="100%">
+                                        <tr align="center">
+                                            <td class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}" alt="GJV Realtors"></td>
+                                            <td class="pe-2"><img src="{{ asset('img/kavery_logo.png') }}" alt="Kavery Premium Tank"></td>
+                                            <td class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}" alt="Pranay Agencies & Infraa"></td>
+                                            <td><img class="pe-2" src="{{ asset('img/tilebros_logo.png') }}" alt="The Tile Bros"></td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td class="pe-2 pt-2"><img src="{{ asset('img/mangum_logo.png') }}" alt="Mangum Properties"></td>
+                                            <td class="pe-2 pt-2"><img src="{{ asset('img/radiomirchi_logo.png') }}" alt="Radio Mirchi"></td>
+                                            <td><img class="pe-2 pt-2" src="{{ asset('img/bmch_logo.png') }}" alt="BMCH"></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
                 <!-- Footer -->
                 <tr>
-                    <td colspan="3" class="vertical-align: middle"
-                        style="background:#f58220;color:#fff;text-align:center;font-size:14px;font-weight:600;padding:10px;">
+                    <td colspan="3" class="bg-[#f58220] text-white text-sm text-center font-medium py-2">
                         EVENT VENUE: EMERALD GROUND, THOPPAMPATTI PIRIVU, COIMBATORE
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="vertical-align: middle"
-                        style="background:#003f3f;color:#fff;text-align:center;font-size:14px;font-weight:600;padding:10px;">
+                    <td colspan="3" class="bg-[#003f3f] text-white text-sm text-center font-medium py-2" >
                         CONTACT NUMBER - 7397 111 747 | 99521 99954 | 93455 00928
                     </td>
                 </tr>
             </table>
         </div>
+
 
 
 
