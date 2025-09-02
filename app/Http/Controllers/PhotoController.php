@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class PhotoController extends Controller
 {
@@ -34,7 +35,7 @@ class PhotoController extends Controller
     public function selectParticipant()
     {
         $mobile = session('avatar_mobile');
-        if (!$mobile) return redirect()->route('avatar.login.form');
+        if (!$mobile) return redirect()->route('login');
 
         $participants = User::where('mobile', $mobile)->orderBy('name')->get();
         return view('photo.select', compact('participants', 'mobile'));
@@ -66,6 +67,35 @@ class PhotoController extends Controller
 
         return redirect()->route('preview', $participant);
     }
+
+    public function savePoster(Request $request, User $participant)
+    {
+        $this->ensureOwner($participant);
+
+        $poster = $request->input('poster'); // base64 from html2canvas
+        $poster = str_replace('data:image/png;base64,', '', $poster);
+        $poster = str_replace(' ', '+', $poster);
+
+        $filename = 'poster_' . $participant->id . '.png';
+        $path = public_path('posters/' . $filename);
+
+        // ✅ Ensure the "posters" directory exists
+        $posterDir = public_path('posters');
+        if (!File::exists($posterDir)) {
+            File::makeDirectory($posterDir, 0777, true, true);
+        }
+
+        // Save poster
+        File::put($path, base64_decode($poster));
+
+        // optional: save in DB
+        $participant->update(['poster_path' => 'posters/' . $filename]);
+
+        return response()->json([
+            'url' => asset('posters/' . $filename),
+        ]);
+    }
+
 
     public function preview(User $participant)
     {

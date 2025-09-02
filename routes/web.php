@@ -28,3 +28,4 @@ Route::get('/upload/{participant}', [App\Http\Controllers\PhotoController::class
 Route::post('/upload/{participant}', [App\Http\Controllers\PhotoController::class, 'upload'])->name('upload');   // Step 3 -> Step 4
 Route::get('/preview/{participant}', [App\Http\Controllers\PhotoController::class, 'preview'])->name('preview'); // Step 4: preview + download
 Route::get('/download/{participant}', [App\Http\Controllers\PhotoController::class, 'download'])->name('download');
+Route::post('/participants/{participant}/save-poster', [App\Http\Controllers\PhotoController::class, 'savePoster'])->name('participants.savePoster');

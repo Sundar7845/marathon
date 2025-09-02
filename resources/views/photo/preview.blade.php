@@ -19,7 +19,7 @@
             <!-- Download Button -->
             @if ($participant->photo_path)
                 <div class="flex flex-wrap gap-5">
-          
+
                     <button id="downloadPoster"
                         class="inline-flex gap-1 items-center bg-[#E65D00] text-white px-6 py-2 rounded-sm font-medium">
                         Download <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 21 21"
@@ -29,26 +29,12 @@
                                 fill="white" />
                         </svg>
                     </button>
-                    
-                        <!-- WhatsApp -->
-                        <a id="shareWhatsApp" target="_blank"
-                            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4" fill="white" viewBox="0 0 32 32">
-                                <path
-                                    d="M16 .395C7.164.395.014 7.547.014 16.385c0 2.91.76 5.74 2.211 8.252L.084 31.605l7.184-2.107c2.42 1.322 5.168 2.02 7.986 2.02h.002c8.836 0 15.986-7.152 15.986-15.99 0-8.838-7.15-15.99-15.986-15.99zm0 29.17h-.002c-2.48 0-4.904-.672-7.02-1.945l-.504-.299-4.266 1.25 1.268-4.16-.33-.537c-1.383-2.24-2.113-4.826-2.113-7.488 0-7.922 6.447-14.37 14.373-14.37 3.84 0 7.445 1.494 10.158 4.207s4.213 6.32 4.213 10.162c0 7.922-6.447 14.37-14.373 14.37zm7.857-10.717c-.43-.215-2.52-1.246-2.91-1.387-.391-.143-.676-.215-.961.215-.283.428-1.102 1.385-1.352 1.67-.248.285-.496.322-.926.107-.43-.215-1.816-.668-3.463-2.127-1.28-1.141-2.145-2.547-2.396-2.977-.248-.428-.027-.66.188-.875.193-.191.43-.498.645-.746.213-.25.285-.428.43-.715.143-.285.072-.537-.035-.752-.107-.215-.961-2.314-1.316-3.166-.346-.83-.697-.717-.961-.73-.248-.012-.537-.014-.826-.014-.287 0-.752.107-1.145.537-.391.428-1.5 1.467-1.5 3.57 0 2.104 1.535 4.145 1.748 4.43.213.285 3.018 4.605 7.305 6.453.719.311 1.281.498 1.719.639.721.229 1.377.197 1.896.119.578-.086 1.781-.727 2.033-1.43.25-.703.25-1.303.178-1.43-.072-.127-.264-.193-.695-.408z" />
-                            </svg>
-                            Share on WhatsApp
-                        </a>
 
-                        <!-- Facebook -->
-                        <a id="shareFacebook" target="_blank"
-                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4" fill="white" viewBox="0 0 24 24">
-                                <path
-                                    d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.4-3.62 3.53-3.62 1.02 0 2.08.18 2.08.18v2.3h-1.17c-1.15 0-1.51.71-1.51 1.44v1.73h2.57l-.41 2.9h-2.16V22c4.78-.8 8.44-4.93 8.44-9.93z" />
-                            </svg>
-                            Share on Facebook
-                        </a>
+                    <!-- WhatsApp -->
+                    <a id="shareWhatsApp" target="_blank"
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center gap-1">
+                        Share ➤
+                    </a>
 
                 </div>
             @endif
@@ -62,9 +48,12 @@
                     <td colspan="3" align="center" style="padding:20px;">
                         <table width="100%">
                             <tr>
-                                <td width="33.3%" align="left"><img src="{{ asset('img/krisha_logo.png') }}" alt="Krisha Charitable Trust Logo" class="h-16"></td>
-                                <td width="33.3%" align="center"><img src="{{ asset('img/emerald_logo.png') }}" alt="Emerald Logo" class="h-16 mx-auto"></td>
-                                <td width="33.3%" align="right"><img src="{{ asset('img/jewelone_logo.png') }}" alt="Jewel One Logo" class="h-16"></td>
+                                <td width="33.3%" align="left"><img src="{{ asset('img/krisha_logo.png') }}"
+                                        alt="Krisha Charitable Trust Logo" class="h-16"></td>
+                                <td width="33.3%" align="center"><img src="{{ asset('img/emerald_logo.png') }}"
+                                        alt="Emerald Logo" class="h-16 mx-auto"></td>
+                                <td width="33.3%" align="right"><img src="{{ asset('img/jewelone_logo.png') }}"
+                                        alt="Jewel One Logo" class="h-16"></td>
                             </tr>
                         </table>
                     </td>
@@ -77,20 +66,25 @@
                             <tr>
                                 <!-- Circle Frame -->
                                 <td width="50%" align="center">
-                                        <div class="rounded-full border-2 border-amber-600 h-[280px] w-[200px] overflow-hidden">
-                                        <img src="{{ asset($participant->photo_path) }}" alt="Participant Photo" class="object-cover w-full h-full">
-                                        </div>
-                                    
+                                    <div
+                                        class="rounded-full border-2 border-amber-600 h-[280px] w-[200px] overflow-hidden">
+                                        <img src="{{ asset($participant->photo_path) }}" alt="Participant Photo"
+                                            class="object-cover w-full h-full">
+                                    </div>
+
                                     <div class="text-2xl uppercase font-bold text-white mb-5 mt-2">
-                
+
                                         {{ $participant->name }}
                                     </div>
                                 </td>
 
                                 <!-- QR Section -->
-                                <td width="50%" align="center" style="background-image: url('{{ asset('img/bg-image.png') }}');background-size: contain; background-repeat: no-repeat;background-position: center;">
-                                    <p class="font-bold text-center text-white text-xl">SCAN QR FOR <br> REGISTRATION</p>
-                                    <img class="my-3" src="{{ asset('img/qr_code.png') }}" alt="QR Code for Registration" width="150">
+                                <td width="50%" align="center"
+                                    style="background-image: url('{{ asset('img/bg-image.png') }}');background-size: contain; background-repeat: no-repeat;background-position: center;">
+                                    <p class="font-bold text-center text-white text-xl">SCAN QR FOR <br> REGISTRATION
+                                    </p>
+                                    <img class="my-3" src="{{ asset('img/qr_code.png') }}"
+                                        alt="QR Code for Registration" width="150">
                                     <p class="font-extrabold text-center text-[#f58220] text-3xl mb-2">I AM RUNNING</p>
                                     <p class="font-bold text-center text-[#f58220] text-2xl mb-2">ARE YOU RUNNING?</p>
                                 </td>
@@ -106,11 +100,14 @@
                             <tr valign="top">
                                 <!-- Partners -->
                                 <td width="30%" align="center" style="padding-right:20px;">
-                                    <h3  class="text-xs font-semibold mb-4">IN ASSOCIATION WITH</h3>
+                                    <h3 class="text-xs font-semibold mb-4">IN ASSOCIATION WITH</h3>
                                     <table width="100%">
                                         <tr>
-                                            <td class="pe-2" align="center"><img src="{{ asset('img/saliwan_runners_logo.png') }}" alt="Saliwan Runners"></td>
-                                            <td align="center"><img src="{{ asset('img/genesis_logo.png') }}" alt="Genesis Foundation"></td>
+                                            <td class="pe-2" align="center"><img
+                                                    src="{{ asset('img/saliwan_runners_logo.png') }}"
+                                                    alt="Saliwan Runners"></td>
+                                            <td align="center"><img src="{{ asset('img/genesis_logo.png') }}"
+                                                    alt="Genesis Foundation"></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -120,15 +117,22 @@
                                     <h3 class="text-xs font-semibold mb-4">OUR SPONSORS</h3>
                                     <table width="100%">
                                         <tr align="center">
-                                            <td class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}" alt="GJV Realtors"></td>
-                                            <td class="pe-2"><img src="{{ asset('img/kavery_logo.png') }}" alt="Kavery Premium Tank"></td>
-                                            <td class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}" alt="Pranay Agencies & Infraa"></td>
-                                            <td><img class="pe-2" src="{{ asset('img/tilebros_logo.png') }}" alt="The Tile Bros"></td>
+                                            <td class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}"
+                                                    alt="GJV Realtors"></td>
+                                            <td class="pe-2"><img src="{{ asset('img/kavery_logo.png') }}"
+                                                    alt="Kavery Premium Tank"></td>
+                                            <td class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}"
+                                                    alt="Pranay Agencies & Infraa"></td>
+                                            <td><img class="pe-2" src="{{ asset('img/tilebros_logo.png') }}"
+                                                    alt="The Tile Bros"></td>
                                         </tr>
                                         <tr align="center">
-                                            <td class="pe-2 pt-2"><img src="{{ asset('img/mangum_logo.png') }}" alt="Mangum Properties"></td>
-                                            <td class="pe-2 pt-2"><img src="{{ asset('img/radiomirchi_logo.png') }}" alt="Radio Mirchi"></td>
-                                            <td><img class="pe-2 pt-2" src="{{ asset('img/bmch_logo.png') }}" alt="BMCH"></td>
+                                            <td class="pe-2 pt-2"><img src="{{ asset('img/mangum_logo.png') }}"
+                                                    alt="Mangum Properties"></td>
+                                            <td class="pe-2 pt-2"><img src="{{ asset('img/radiomirchi_logo.png') }}"
+                                                    alt="Radio Mirchi"></td>
+                                            <td><img class="pe-2 pt-2" src="{{ asset('img/bmch_logo.png') }}"
+                                                    alt="BMCH"></td>
                                             <td></td>
                                         </tr>
                                     </table>
@@ -145,16 +149,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="bg-[#003f3f] text-white text-sm text-center font-medium py-2" >
+                    <td colspan="3" class="bg-[#003f3f] text-white text-sm text-center font-medium py-2">
                         CONTACT NUMBER - 7397 111 747 | 99521 99954 | 93455 00928
                     </td>
                 </tr>
             </table>
         </div>
-
-
-
-
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -170,15 +170,46 @@
     </script>
 
     <script>
-        const message = encodeURIComponent("I have registered for the Marathon! 🏃 Join me here:");
-        const shareUrl = encodeURIComponent("https://www.emeraldsilver.in"); // replace with your event link
+        async function generateAndShare() {
+            const posterSection = document.getElementById('poster-section');
 
-        document.getElementById('shareWhatsApp').href =
-            `https://api.whatsapp.com/send?text=${message}%20${shareUrl}`;
+            // Convert poster to canvas
+            const canvas = await html2canvas(posterSection);
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
 
-        document.getElementById('shareFacebook').href =
-            `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${message}`;
+            const file = new File([blob], "poster.png", {
+                type: "image/png"
+            });
+
+            // Message text
+            const message =
+                "I have registered for Jewel One Marathon! Register now: https://wa.me/919791714333?text=REGISTER%20FOR%20JEWEL%20ONE%20MARATHON";
+
+            // Check if Web Share API supports files
+            if (navigator.canShare && navigator.canShare({
+                    files: [file]
+                })) {
+                try {
+                    await navigator.share({
+                        title: "Jewel One Marathon",
+                        text: message,
+                        files: [file]
+                    });
+                } catch (error) {
+                    console.error("Sharing failed:", error);
+                }
+            } else {
+                alert("Direct image sharing is not supported in this browser. Please use mobile Chrome/Safari.");
+            }
+        }
+
+        // Attach handlers
+        document.getElementById('shareWhatsApp').addEventListener('click', function(e) {
+            e.preventDefault();
+            generateAndShare();
+        });
     </script>
+
 
 </body>
 
