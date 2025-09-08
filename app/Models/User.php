@@ -23,7 +23,21 @@ class User extends Authenticatable
         'password',
         'mobile',
         'photo_path',
-        'poster_path'
+        'poster_path',
+        'user_type',
+        'E-Number',
+        'employee_name',
+        'dob',
+        'age',
+        'gender',
+        'unit',
+        'department',
+        'blood_group',
+        'T-shirt_size',
+        'category',
+        'emergency_person',
+        'emergency_person_number',
+        'registration_type'
     ];
 
     /**
