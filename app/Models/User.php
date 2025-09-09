@@ -26,7 +26,6 @@ class User extends Authenticatable
         'poster_path',
         'user_type',
         'E-Number',
-        'employee_name',
         'dob',
         'age',
         'gender',
