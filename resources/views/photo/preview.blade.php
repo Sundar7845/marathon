@@ -125,28 +125,28 @@
                                     <h3 class="text-[10px]  font-semibold mb-4">OUR SPONSORS</h3>
                                     <table width="100%">
                                         <tr align="center">
-                                            <td class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}"
+                                            <td width="20%" class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}"
                                                     alt="GJV Realtors"></td>
-                                            <td class="pe-2"><img src="{{ asset('img/kavery_logo.png') }}"
+                                            <td width="20%" class="pe-2"><img src="{{ asset('img/kavery_logo.png') }}"
                                                     alt="Kavery Premium Tank"></td>
-                                            <td class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}"
+                                            <td width="20%" class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}"
                                                     alt="Pranay Agencies & Infraa"></td>
-                                            <td><img class="pe-2" src="{{ asset('img/bmch_logo.png') }}"
+                                            <td width="20%"><img class="pe-2" src="{{ asset('img/bmch_logo.png') }}"
                                                     alt="BMCH"></td>
-                                            <td><img  src="{{ asset('img/tilebros_logo.png') }}"
+                                            <td width="20%"><img  src="{{ asset('img/tilebros_logo.png') }}"
                                                     alt="The Tile Bros"></td>
                                         </tr>
                                         <tr align="center">
-                                        <td><img class="pe-2 pt-3" src="{{ asset('img/magnum.png') }}"
+                                        <td width="20%"><img class="pe-2 pt-3" src="{{ asset('img/magnum.png') }}"
                                                     alt="BMCH"></td>
                                         
-                                        <td class="pe-2 pt-3"><img src="{{ asset('img/mirchi.png') }}"
+                                        <td width="20%" class="pe-2 pt-3"><img src="{{ asset('img/mirchi.png') }}"
                                                     alt="GJV Realtors"></td>
-                                            <td class="pe-2 pt-3"><img src="{{ asset('img/kps-hospitals.png') }}"
+                                            <td width="20%" class="pe-2 pt-3"><img src="{{ asset('img/kps-hospitals.png') }}"
                                                     alt="Kavery Premium Tank"></td>
-                                            <td class="pe-2 pt-3"><img src="{{ asset('img/kr-hospital.png') }}"
+                                            <td width="20%" class="pe-2 pt-3"><img src="{{ asset('img/kr-hospital.png') }}"
                                                     alt="Pranay Agencies & Infraa"></td>
-                                            <td><img class="pt-3" src="{{ asset('img/cherr.png') }}"
+                                            <td width="20%"><img class="pt-3" src="{{ asset('img/cherr.png') }}"
                                                     alt="BMCH"></td>
                                            
                                         </tr>
