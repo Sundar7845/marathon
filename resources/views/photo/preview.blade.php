@@ -99,22 +99,30 @@
                         <table width="100%">
                             <tr valign="top">
                                 <!-- Partners -->
-                                <td width="30%" align="center" style="padding-right:20px;">
-                                    <h3 class="text-xs font-semibold mb-4">IN ASSOCIATION WITH</h3>
+                                <td width="20%" align="center" style="padding-right:20px;">
+                                    <h3 class="text-[10px] font-semibold mb-4">IN ASSOCIATION WITH</h3>
                                     <table width="100%">
                                         <tr>
-                                            <td class="pe-2" align="center"><img
+                                            <td class="pe-2" align="center">
+                                                <div class="mb-3">
+                                                <img
                                                     src="{{ asset('img/saliwan_runners_logo.png') }}"
-                                                    alt="Saliwan Runners"></td>
-                                            <td align="center"><img src="{{ asset('img/genesis_logo.png') }}"
-                                                    alt="Genesis Foundation"></td>
+                                                    alt="Saliwan Runners">
+                                                </div>
+                                                    <div>
+                                                    <img src="{{ asset('img/genesis_logo.png') }}"
+                                                    alt="Genesis Foundation">
+                                                    </div>
+                                                </td>
+                                            
                                         </tr>
+                                      
                                     </table>
                                 </td>
 
                                 <!-- Sponsors -->
-                                <td width="70%" style="border-left:1px solid #000;padding-left:20px;">
-                                    <h3 class="text-xs font-semibold mb-4">OUR SPONSORS</h3>
+                                <td width="80%" style="border-left:1px solid #000;padding-left:20px;">
+                                    <h3 class="text-[10px]  font-semibold mb-4">OUR SPONSORS</h3>
                                     <table width="100%">
                                         <tr align="center">
                                             <td class="pe-2"><img src="{{ asset('img/gjv_logo.png') }}"
@@ -123,17 +131,24 @@
                                                     alt="Kavery Premium Tank"></td>
                                             <td class="pe-2"><img src="{{ asset('img/pranay_logo.png') }}"
                                                     alt="Pranay Agencies & Infraa"></td>
-                                            <td><img class="pe-2" src="{{ asset('img/tilebros_logo.png') }}"
+                                            <td><img class="pe-2" src="{{ asset('img/bmch_logo.png') }}"
+                                                    alt="BMCH"></td>
+                                            <td><img  src="{{ asset('img/tilebros_logo.png') }}"
                                                     alt="The Tile Bros"></td>
                                         </tr>
                                         <tr align="center">
-                                            <td class="pe-2 pt-2"><img src="{{ asset('img/mangum_logo.png') }}"
-                                                    alt="Mangum Properties"></td>
-                                            <td class="pe-2 pt-2"><img src="{{ asset('img/radiomirchi_logo.png') }}"
-                                                    alt="Radio Mirchi"></td>
-                                            <td><img class="pe-2 pt-2" src="{{ asset('img/bmch_logo.png') }}"
+                                        <td><img class="pe-2 pt-3" src="{{ asset('img/magnum.png') }}"
                                                     alt="BMCH"></td>
-                                            <td></td>
+                                        
+                                        <td class="pe-2 pt-3"><img src="{{ asset('img/mirchi.png') }}"
+                                                    alt="GJV Realtors"></td>
+                                            <td class="pe-2 pt-3"><img src="{{ asset('img/kps-hospitals.png') }}"
+                                                    alt="Kavery Premium Tank"></td>
+                                            <td class="pe-2 pt-3"><img src="{{ asset('img/kr-hospital.png') }}"
+                                                    alt="Pranay Agencies & Infraa"></td>
+                                            <td><img class="pt-3" src="{{ asset('img/cherr.png') }}"
+                                                    alt="BMCH"></td>
+                                           
                                         </tr>
                                     </table>
                                 </td>
