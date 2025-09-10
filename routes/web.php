@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/certificate', function () {
     return view('certificate');
 });
-Route::post('/certificate', [App\Http\Controllers\CertificateController::class, 'generateCertificate']);
+Route::post('/certificate', [App\Http\Controllers\CertificateController::class, 'generateCertificate'])->name('certificate');
 Route::get('/photo', [App\Http\Controllers\PhotoController::class, 'photo'])->name('photo');
 Route::post('/login', [App\Http\Controllers\PhotoController::class, 'login'])->name('login');                    // Step 1 -> Step 2
 Route::get('/select', [App\Http\Controllers\PhotoController::class, 'selectParticipant'])->name('select');       // Step 2: choose record
