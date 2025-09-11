@@ -150,6 +150,21 @@
                                                     alt="BMCH"></td>
                                            
                                         </tr>
+
+
+                                        <tr align="center">
+                                        <td width="20%"><img class="pe-2 pt-3" src="{{ asset('img/sponser-11.png') }}"
+                                                    alt="sponser-11"></td>
+                                        
+                                        <td width="20%" class="pe-2 pt-3"><img src="{{ asset('img/sponser-12.png') }}"
+                                                    alt="sponser-12"></td>
+                                            <td width="20%" class="pe-2 pt-3"><img src="{{ asset('img/sponser-13.png') }}"
+                                                    alt="sponser-13"></td>
+                                            <td width="20%" class="pt-3"><img src="{{ asset('img/sponser-14.png') }}"
+                                                    alt="sponser-14"></td>
+                                            
+                                        </tr>
+
                                     </table>
                                 </td>
                             </tr>
