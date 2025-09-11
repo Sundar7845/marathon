@@ -10,10 +10,22 @@ class CertificateController extends Controller
 {
     function generateCertificate(Request $request)
     {
-        $user = User::where('mobile', $request->mobile)->first();
+        $request->validate([
+            'mobile' => 'required|digits:10|exists:users,mobile',
+            'name'   => 'required'
+        ], [
+            'mobile.required' => 'Mobile number is required.',
+            'mobile.digits'   => 'Mobile number must be exactly 10 digits.',
+            'mobile.exists'   => 'This mobile number is not registered.',
+            'name.required'   => 'Name is required.',
+        ]);
+
+        $user = User::where('mobile', $request->mobile)->where('name', $request->name)->first();
 
         if (!$user) {
-            return back()->with('error', 'User not found.');
+            return back()->withErrors([
+                'name' => 'The name does not match with this mobile number.',
+            ])->withInput();
         }
 
         $pdf = Pdf::loadView('certificate', [
