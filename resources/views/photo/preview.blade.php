@@ -24,7 +24,7 @@
         <div class="lg:order-2">
             <!-- Download Button -->
             @if ($participant->photo_path)
-            <div class="flex lg:flex-col flex-wrap gap-5">
+            <div class="flex lg:flex-col flex-wrap gap-4">
 
                 <button id="downloadPoster"
                     class="inline-flex gap-1 items-center bg-[#E65D00] text-white px-6 py-2 rounded-sm font-medium">
@@ -38,8 +38,11 @@
 
                 <!-- WhatsApp -->
                 <a id="shareWhatsApp" target="_blank"
-                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded flex items-center gap-1">
-                    Share ➤
+                    class=" text-white bg-green-600 rounded-sm font-medium cursor-pointer px-4 py-2 flex items-center gap-2 text-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17" fill="none">
+                    <path d="M11.335 11.576C10.6954 11.576 10.1269 11.8126 9.66497 12.1767L5.11675 9.61028C5.22335 9.31906 5.29442 8.99144 5.29442 8.64561C5.29442 8.29979 5.22335 7.97216 5.11675 7.68094L9.87817 4.96895C10.3046 5.26017 10.802 5.42398 11.3528 5.42398C12.8096 5.42398 14 4.2045 14 2.71199C14 1.21949 12.7919 0 11.335 0C9.87817 0 8.68782 1.21949 8.68782 2.71199C8.68782 3.18523 8.81218 3.62206 9.00761 4.00428L4.40609 6.62527C3.94416 6.18844 3.32234 5.93362 2.64721 5.93362C1.19036 5.93362 0 7.15311 0 8.64561C0 10.1381 1.19036 11.3576 2.64721 11.3576C3.32234 11.3576 3.94416 11.0846 4.40609 10.666L8.90101 13.2141C8.75888 13.5418 8.68782 13.9058 8.68782 14.288C8.68782 15.7805 9.87817 17 11.335 17C12.7919 17 13.9822 15.7805 13.9822 14.288C13.9822 12.7955 12.7919 11.576 11.335 11.576ZM11.335 1.27409C12.1168 1.27409 12.7386 1.92934 12.7386 2.71199C12.7386 3.49465 12.099 4.14989 11.335 4.14989C10.5711 4.14989 9.93147 3.49465 9.93147 2.71199C9.93147 1.92934 10.5533 1.27409 11.335 1.27409ZM2.62944 10.0835C1.84772 10.0835 1.22589 9.42827 1.22589 8.64561C1.22589 7.86296 1.86548 7.20771 2.62944 7.20771C3.3934 7.20771 4.03299 7.86296 4.03299 8.64561C4.03299 9.42827 3.41117 10.0835 2.62944 10.0835ZM11.335 15.7259C10.5533 15.7259 9.93147 15.0707 9.93147 14.288C9.93147 13.4872 10.5711 12.8501 11.335 12.8501C12.099 12.8501 12.7386 13.5054 12.7386 14.288C12.7386 15.0889 12.099 15.7259 11.335 15.7259Z" fill="white"/>
+                    </svg>
+                    Share 
                 </a>
 
             </div>
@@ -73,12 +76,12 @@
                                 <!-- Circle Frame -->
                                 <td width="50%" align="center">
                                     <div
-                                        class="rounded-full border-2 border-amber-600 h-[320px] w-[200px] overflow-hidden">
+                                        class="rounded-full border-2 border-amber-600 h-[360px] w-[250px] overflow-hidden ms-8">
                                         <img src="{{ asset($participant->photo_path) }}" alt="Participant Photo"
                                             class="object-cover w-full h-full">
                                     </div>
 
-                                    <div class="text-2xl uppercase font-bold text-white mb-5 mt-2">
+                                    <div class="text-2xl uppercase font-bold text-white mb-5 mt-2 ms-8" style="word-break: break-word; ">
 
                                         {{ $participant->name }}
                                     </div>
@@ -101,10 +104,10 @@
 
                 <!-- Bottom Section -->
                 <tr>
-                    <td colspan="3" style="background:#fff;color:#000;padding:20px 0;">
+                    <td colspan="3">
                         <div class="w-full flex justify-center">
                             <img
-                                src="{{ asset('img/sponsers.png') }}"
+                                src="{{ asset('img/sponsers-banner.png') }}"
                                 alt="sponsors">
                         </div>
                     </td>
@@ -112,7 +115,7 @@
                 </tr>
 
                 <!-- Footer -->
-                <tr>
+                <!-- <tr>
                     <td colspan="3" class="bg-[#f58220] text-white text-sm text-center font-medium py-2">
                         EVENT VENUE: EMERALD GROUND, THOPPAMPATTI PIRIVU, COIMBATORE
                     </td>
@@ -121,63 +124,64 @@
                     <td colspan="3" class="bg-[#003f3f] text-white text-sm text-center font-medium py-2">
                         CONTACT NUMBER - 7397 111 747 | 99521 99954 | 93455 00928
                     </td>
-                </tr>
+                </tr> -->
             </table>
         </div>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script>
-        document.getElementById('downloadPoster').addEventListener('click', function() {
-            html2canvas(document.getElementById('poster-section')).then(function(canvas) {
-                const link = document.createElement('a');
-                link.download = 'poster.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-            });
+<script>
+    document.getElementById('downloadPoster').addEventListener('click', function() {
+        html2canvas(document.getElementById('poster-section'), {
+            scale: 3, // Increase scale for higher resolution (2 or 3 is usually enough)
+            useCORS: true // Ensures external images are captured if hosted
+        }).then(function(canvas) {
+            const link = document.createElement('a');
+            link.download = 'poster.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
         });
-    </script>
+    });
+</script>
 
-    <script>
-        async function generateAndShare() {
-            const posterSection = document.getElementById('poster-section');
+<script>
+    async function generateAndShare() {
+        const posterSection = document.getElementById('poster-section');
 
-            // Convert poster to canvas
-            const canvas = await html2canvas(posterSection);
-            const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+        // Convert poster to canvas (high quality)
+        const canvas = await html2canvas(posterSection, {
+            scale: 3,
+            useCORS: true
+        });
 
-            const file = new File([blob], "poster.png", {
-                type: "image/png"
-            });
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
 
-            // Message text
-            const message =
-                "I have registered for Jewel One Marathon! Register now: https://wa.me/919791714333?text=REGISTER%20FOR%20JEWEL%20ONE%20MARATHON";
+        const file = new File([blob], "poster.png", { type: "image/png" });
 
-            // Check if Web Share API supports files
-            if (navigator.canShare && navigator.canShare({
+        const message =
+            "I have registered for Jewel One Marathon! Register now: https://wa.me/919791714333?text=REGISTER%20FOR%20JEWEL%20ONE%20MARATHON";
+
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            try {
+                await navigator.share({
+                    title: "Jewel One Marathon",
+                    text: message,
                     files: [file]
-                })) {
-                try {
-                    await navigator.share({
-                        title: "Jewel One Marathon",
-                        text: message,
-                        files: [file]
-                    });
-                } catch (error) {
-                    console.error("Sharing failed:", error);
-                }
-            } else {
-                alert("Direct image sharing is not supported in this browser. Please use mobile Chrome/Safari.");
+                });
+            } catch (error) {
+                console.error("Sharing failed:", error);
             }
+        } else {
+            alert("Direct image sharing is not supported in this browser. Please use mobile Chrome/Safari.");
         }
+    }
 
-        // Attach handlers
-        document.getElementById('shareWhatsApp').addEventListener('click', function(e) {
-            e.preventDefault();
-            generateAndShare();
-        });
-    </script>
+    document.getElementById('shareWhatsApp').addEventListener('click', function(e) {
+        e.preventDefault();
+        generateAndShare();
+    });
+</script>
+
 
 
 </body>
