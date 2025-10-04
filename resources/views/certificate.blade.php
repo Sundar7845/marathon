@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
+
 <body class="min-h-screen"
     style="background-image: url({{ asset('bg.jpg') }});background-size: cover">
 
@@ -24,8 +25,8 @@
 
         <?php
         // Dummy variables (replace with DB values)
-        $name = "Ravi Kiran";
-        $km = "10 KM";
+        $name =$user->name;
+        $km =$user->category;
         ?>
 
         <script>

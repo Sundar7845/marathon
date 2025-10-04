@@ -28,10 +28,13 @@ class CertificateController extends Controller
             ])->withInput();
         }
 
-        $pdf = Pdf::loadView('certificate', [
-            'user' => $user
-        ]);
+        // $pdf = Pdf::loadView('certificate', [
+        //     'user' => $user
+        // ]);
 
-        return $pdf->download('Marathon-Certificate.pdf');
+        // return $pdf->download('Marathon-Certificate.pdf');
+
+        return view('certificate', ['user' => $user]);
+
     }
 }
