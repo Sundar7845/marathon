@@ -56,7 +56,7 @@
                 page.drawText(userName, {
                     x: 155, // adjust X if text looks off
                     y: 415, // adjust Y if text looks off
-                    size: 18,
+                    size: 16,
                     font,
                     color: rgb(0, 0, 0)
                 });
@@ -65,7 +65,7 @@
                 page.drawText(kmRange, {
                     x: 147,
                     y: 362,
-                    size: 16,
+                    size: 11,
                     font,
                     color: rgb(0, 0, 0)
                 });
