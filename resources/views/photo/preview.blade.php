@@ -15,7 +15,8 @@
 </head>
 
 
-<body class="min-h-screen" style="background-image: url({{ asset('bg.jpg') }});background-size: cover">
+<body class="min-h-screen"
+    style="background-image: url({{ asset('bg.jpg') }});background-size: cover">
 
     <div class="mx-w-5xl mx-auto py-10 px-4 sm:px-8">
         <iframe id="pdfPreview" width="100%" height="1200"></iframe>
@@ -67,23 +68,23 @@
 
                 // Draw Name (adjust coordinates if needed)
                 page.drawText(userName, {
-                    x: centeredX,
-                    y: yPosition,
-                    size: fontSize,
+                    x: 155, // adjust X if text looks off
+                    y: 415, // adjust Y if text looks off
+                    size: 16,
                     font,
                     color: rgb(0, 0, 0)
                 });
 
-                const startXkmRange = 195; // left edge of dotted line
-                const endXkmRange = 200; // right edge of dotted line
+                const startXkmRange = 160; // left edge of dotted line
+                const endXkmRange = 320; // right edge of dotted line
                 const yPositionkmRange = 362; // Y position of the name
 
-                const kmRangeFontSize = 11;
+                const kmRangeFontSize=11;
 
                 const textWidthkmRange = font.widthOfTextAtSize(kmRange, kmRangeFontSize);
 
                 // Center within the dotted line
-                const centeredXkmRange = startXkmRange + ((endXkmRange - startXkmRange) - textWidth) / 2;
+                const centeredXkmRange = startX + ((endXkmRange - startXkmRange) - textWidth) / 2;
 
 
                 // Draw KM range
