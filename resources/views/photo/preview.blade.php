@@ -51,23 +51,51 @@
                 // Choose font
                 const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
+
+                // Define the horizontal area for dotted line
+                const startX = 180; // left edge of dotted line
+                const endX = 430; // right edge of dotted line
+                const yPosition = 415; // Y position of the name
+
+                const fontSize = 16;
+                const textWidth = font.widthOfTextAtSize(userName, fontSize);
+
+                // Center within the dotted line
+                const centeredX = startX + ((endX - startX) - textWidth) / 2;
+
+
+
                 // Draw Name (adjust coordinates if needed)
                 page.drawText(userName, {
-                    x: 155, // adjust X if text looks off
-                    y: 415, // adjust Y if text looks off
-                    size: 16,
+                    x: centeredX,
+                    y: yPosition,
+                    size: fontSize,
                     font,
                     color: rgb(0, 0, 0)
                 });
 
+                const startXkmRange = 195; // left edge of dotted line
+                const endXkmRange = 200; // right edge of dotted line
+                const yPositionkmRange = 362; // Y position of the name
+
+                const kmRangeFontSize = 11;
+
+                const textWidthkmRange = font.widthOfTextAtSize(kmRange, kmRangeFontSize);
+
+                // Center within the dotted line
+                const centeredXkmRange = startXkmRange + ((endXkmRange - startXkmRange) - textWidth) / 2;
+
+
                 // Draw KM range
                 page.drawText(kmRange, {
-                    x: 147,
-                    y: 362,
-                    size: 11,
+                    x: centeredXkmRange,
+                    y: yPositionkmRange,
+                    size: kmRangeFontSize,
                     font,
                     color: rgb(0, 0, 0)
                 });
+
+
 
                 // Save and preview
                 const pdfBytes = await pdfDoc.save();

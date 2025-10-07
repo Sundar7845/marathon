@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Avatar</title>
+    <title>Certificate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel='shortcut icon' type='image/x-icon' href='https://www.emeraldsilver.in/retailer/assets/img/favicon.ico' />
@@ -84,7 +84,7 @@
                 const textWidthkmRange = font.widthOfTextAtSize(kmRange, kmRangeFontSize);
 
                 // Center within the dotted line
-                const centeredXkmRange = startX + ((endXkmRange - startXkmRange) - textWidth) / 2;
+                const centeredXkmRange = startXkmRange + ((endXkmRange - startXkmRange) - textWidth) / 2;
 
 
                 // Draw KM range
