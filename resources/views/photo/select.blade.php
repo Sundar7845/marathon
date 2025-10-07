@@ -26,6 +26,12 @@
             @endforeach
         </div>
     </div>
+
+    <div class="mt-10 bg-red-700 rounded-xl shadow-xl shadow-black/40 p-6 max-w-xl text-center">
+        <div class="text-white font-medium">In case you have any issues with the name or downloading certificate, please reach out to our support: <a href="tel:+919952199954">+91 99521 99954</a>
+        </div>
+    </div>
+    
 </body>
 
 </html>
