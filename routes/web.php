@@ -21,7 +21,7 @@ Route::get('/certificate', function () {
     return view('certificate');
 });
 Route::get('/certificate/{id}', [App\Http\Controllers\CertificateController::class, 'generateCertificate'])->name('certificate');
-Route::get('/photo', [App\Http\Controllers\PhotoController::class, 'photo'])->name('photo');
+Route::get('/E-certificate', [App\Http\Controllers\PhotoController::class, 'photo'])->name('e-certificate'); // Step 0 -> Step 1
 Route::post('/login', [App\Http\Controllers\PhotoController::class, 'login'])->name('login');                    // Step 1 -> Step 2
 Route::get('/select', [App\Http\Controllers\PhotoController::class, 'selectParticipant'])->name('select');       // Step 2: choose record
 Route::get('/upload/{participant}', [App\Http\Controllers\PhotoController::class, 'uploadForm'])->name('upload.form'); // Step 3: upload ui
