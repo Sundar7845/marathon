@@ -17,10 +17,10 @@
         <a class="absolute top-4 left-4 text-[#A1A1AA] text-sm flex gap-1 items-center" href="{{ route('login') }}"><svg xmlns="http://www.w3.org/2000/svg" class="w-3" viewBox="0 0 24 23" fill="none">
                 <path d="M12.4765 21.8203L2.93984 12.3126H24V10.6872H3.13852L12.2373 1.13809L11.0856 0L0 11.6223L11.3637 23L12.4765 21.8203Z" fill="#A1A1AA" />
             </svg>Back</a>
-        <h2 class="text-[#E65D00] text-center text-lg mb-6">Select your name to generate photo</h2>
+        <h2 class="text-[#E65D00] text-center text-lg mb-6">Select your name to generate E-Certificate</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             @foreach ($participants as $p)
-            <a class="bg-[#444] text-white text-center px-4 py-6 capitalize rounded-xl w-full mb-2 shadow font-semibold" href="{{ route('upload.form', $p) }}">
+            <a class="bg-[#444] text-white text-center px-4 py-6 capitalize rounded-xl w-full mb-2 shadow font-semibold" href="{{ route('certificate', $p) }}">
                     {{ $p->name }}
             </a>
             @endforeach

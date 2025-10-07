@@ -20,7 +20,7 @@
     <div
         class="max-w-md w-full mx-auto bg-[#151515] border border-[#A1A1AA] rounded-xl shadow-xl shadow-black/40 px-6 py-14 mt-10">
         <h2 class="text-center text-white text-lg mb-6">
-            Enter your phone number to <br> generate your avatar
+            Enter your phone number to <br> generate your E-Certificate
         </h2>
 
         <form method="post" action="{{ route('login') }}" class="space-y-6">
